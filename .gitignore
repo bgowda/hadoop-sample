@@ -1,4 +1,11 @@
 *.class
+target
+
+# Intellij files
+.idea
+*.iml
+*.ipr
+*.iws
 
 # Package Files #
 *.jar
