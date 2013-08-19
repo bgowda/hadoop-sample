@@ -25,7 +25,7 @@ public class ExpenseMap extends MapReduceBase implements Mapper<LongWritable, Te
                 List<CSVRecord> records = csvParser.getRecords();
                 for (CSVRecord record : records) {
 
-                    text.set(record.get(2).concat(","));
+                    text.set("\"".concat(record.get(2)).concat("\","));
                     DoubleWritable doubleWritable = new DoubleWritable(Double.parseDouble(record.get(3)));
                     output.collect(text, doubleWritable);
                 }
